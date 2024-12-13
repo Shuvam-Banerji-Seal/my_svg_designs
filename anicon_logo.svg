@@ -1,0 +1,128 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<!-- I need some elements... so let's define them first -->
+
+<defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#000000"  />
+        <stop offset="100%" style="stop-color:#1a1a1a"  />
+    </linearGradient>
+    
+    <linearGradient id="fireGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color: #ff4d00" />
+        <stop offset="50%" style="stop-color: #ff0000" />
+        <stop offset="100%" style="stop-color: #ffff00" />
+    </linearGradient>
+
+    <!-- adding glow effects -->
+    <filter id="blueGlow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feFlood flood-color="#0000ff" result="color"/>
+        <feComposite in="color" in2= "blur" operator="in"/>
+            <feMerge>
+                <feMergeNode/>
+                    
+                <feMergeNode in="SourceGraphic">
+            </feMerge>>
+    </filter>
+
+    <filter id="pinkGlow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feFlood flood-color="#ffc0cb" result="color"/>
+        <feComposite in="color" in2= "blur" operator="in"/>
+            <feMerge>
+                <feMergeNode/>
+                    
+                <feMergeNode in="SourceGraphic">
+            </feMerge>>
+    </filter>
+
+    <!-- Neon Glow effect? -->
+
+     <filter id="neonGlow">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <!-- <feFlood flood-color="#ffc0cb" result="color"/> -->
+        <!-- <feComposite in="color" in2= "blur" operator="in"/> -->
+            <feMerge>
+                <feMergeNode in="blur" />
+                              
+                <feMergeNode in="SourceGraphic">
+            </feMerge>>
+    </filter>
+
+    <!-- Added a fireglow effect -->
+    <filter id="fireGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#ff4400" result="color"/>
+      <feComposite in="color" in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+
+</defs>
+<!-- need to think of other gradients, let me create some base stuff nowww -->
+<!-- first let's make the dark background -->
+<rect x="0" y="0" width="400" height="400" fill="black"/>
+<circle cx="200" cy="200" r="180" fill="url(#bgGradient)" />
+<!-- looks like the base is going gooood, let me make more grdients!!! -->
+
+<!-- adding some circles to the border -->
+<circle cx="200" cy="200" r="150" stroke="#ff00ff" stroke-width="2" fill="none" opacity="0.3" filter="url(#pinkGlow)"/>
+<circle cx="200" cy="200" r="160" stroke="#00ffff" stroke-width="2" fill="none" opacity="0.3" filter="url(#blueGlow)"/>
+
+
+<!-- Naruto? -->
+<!-- Some energy rings?? -->
+<path d="M50,200 Q200,50 350,200" stroke="#00ff08" stroke-width="3" fill="none" filter="url(#pinkGlow)"/>
+<path d="M50,200 Q200,350 350,200" stroke="#00ffff" stroke-width="3" fill="none" filter="url(#blueGlow)"/>
+<!-- looks like eyes though -->
+
+<!-- Anicon text -->
+<g transform="translate(200,190) scale(1.2)">
+    <text x="-2" y="0" font-family="Impact" font-size="47" fill="#ffffff" text-anchor="middle" style="letter-spacing: 5px;" filter="url(#neonGlow)" stroke="#00ffff" stroke-width="2">
+        ANICON
+    </text>
+     <text x="-2" y="0" font-family="Impact" font-size="47" fill="none" text-anchor="middle" style="letter-spacing: 5px;" stroke="rgba(255, 0, 255, 0.4)" stroke-width="1">
+        ANICON
+    </text>
+</g>
+
+<!-- The firery 3.0 -->
+<g transform="translate(200,240) scale(1.0)">
+    <text x="0" y="5" font-family="Impact" font-size="69" fill="url(#fireGradient)" text-anchor="middle" filter="url(#fireGlow)" style="font-style: italic;" >
+
+        3.0
+    </text>
+    <!-- Some joining fire? -->
+    <path d= "M-40,-20 Q-30,-40 -20,-20 Q-10,-40 0,-20 Q10,-40 20,-20 Q30,-40 40,-20" fill="none" stroke="url(#fireGradient)" stroke-width="3" filter="url(#fireGlow)"/>
+</g>
+
+
+<!-- INQUIVESTA logo/text... -->
+<text x="200" y="320" font-family="Arial" font-size="16" fill="#ff00ff" text-anchor="middle" filter="url(#pinkGlow)">
+    INQUIVESTA
+</text>
+
+
+<!-- Some dragon ball stars?? -->
+<!-- if theres a loop for making stars in svg then let me know!!!!!!!!!! -->
+
+<g fill="#00ffff" filter="url(#blueGlow)">
+    <polygon points="200,100 205,110 215,110 207,118 210,128 200,122 190,128 193,118 185,110 195,110" />
+    <polygon points="120,280 125,290 135,290 127,298 130,308 120,302 110,308 113,298 105,290 115,290" />
+    <polygon points="280,280 285,290 295,290 287,298 290,308 280,302 270,308 273,298 265,290 275,290" />
+
+</g>
+
+
+<!-- adding some decorations -->
+<g stroke="#ff00ff" stroke-width="1" opacity="0.5" filter="url(#blueGlow)">
+    <line x1="50" x2="80" y1="50" y2="80" />
+    <line x1="320" x2="350" y1="50" y2="80" />
+    <line x1="50" x2="80" y1="350" y2="320" />
+    <line x1="320" x2="350" y1="350" y2="320" />
+</g>
+    
+</svg>
